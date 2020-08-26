@@ -2,15 +2,19 @@
 function tentukan_deret_aritmatika($arr) {
 // kode di sini
     $panjang = count($arr);
-    $selisih = $arr[$panjang-1]-$arr[$panjang-2];
-    $hasil = "";
-    if ($selisih == $arr[0]){
-        echo "Deret Aritmatika : True <br>";
-       
-    } else {
-        echo "Deret Aritmatika : False <br>";
+    $selisih = $arr[1]-$arr[0];
+    $stat ="";
+    $hasil = [];
+    for ($i=$panjang-1; $i>0; $i-- ){
+        if ($arr[$i] == $arr[$i-1]+$selisih){
+            $stat = "True <br>";
+          
+        } else {
+           $stat = "False <br>";
+        break;
+        }
     }
-
+return $stat;
 }
 
 // TEST CASES

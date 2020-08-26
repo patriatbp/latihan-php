@@ -3,14 +3,18 @@ function tentukan_deret_geometri($arr) {
 // kode di sini
     $n = $arr;
     $panjang = count($arr);
-    $kali1 = $n[$panjang-1]/$n[$panjang-2];
-    $kali2 = $n[1]/$n[0];
-    if ($kali1 == $kali2){
-        echo "Deret Geometri : True <br>";
-       
-    } else {
-        echo "Deret Geometri : False <br>";
+    $kali = $n[1]/$n[0];
+    $stat = "";
+    for ($i=$panjang-1; $i>0; $i--){
+        if ($n[$i] == $n[$i-1]*$kali){
+            $stat = "True <br>";
+           
+        } else {
+            $stat = "False <br>";
+        break;
+        }
     }
+    return $stat;
 }
 //TEST CASES
 echo tentukan_deret_geometri([1, 3, 9, 27, 81]); // true
